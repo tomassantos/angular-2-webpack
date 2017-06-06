@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent { 
 	name = 'World'; 
