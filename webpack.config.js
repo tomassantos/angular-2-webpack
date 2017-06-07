@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash].bundle.js'
+    filename: '[name].[hash:8].bundle.js'
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js'] 
@@ -51,7 +51,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({template: 'index.html'}), // Creates index.html and adds link and script tags.
-    new ExtractTextPlugin("styles.[hash].css"), //Creates css file.
+    new ExtractTextPlugin("styles.[hash:8].css"), //Creates css file.
     new webpack.ContextReplacementPlugin(  //Removes warning from the command panle coming from angular  
       /angular(\\|\/)core(\\|\/)@angular/,
       path.resolve(__dirname, '../src')
